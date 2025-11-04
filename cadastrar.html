@@ -1,0 +1,55 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Filme - CineReview</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="pontos-display">
+            <div class="points-section">
+                <img id="logo" src="imgs/9399710436_1403cb90-ebcb-4793-81ce-f5ac611a2b6c.png" alt="logo">
+            </div>
+            <div class="points-section">
+                <h3><a href="index.html">Inicio</a></h3>
+                <h3><a href="index.html">Filmes</a></h3>
+            </div>
+            <div class="points-section">
+                <h3><a href="logar.html">Logar</a></h3>
+                <h3 class="cadastra-style"><a href="cadastrar.html">Cadastrar</a></h3>
+            </div>
+        </div>
+    </header>
+<div class="container">
+    <div class="card">
+      <h1>Cadastrar</h1>
+      <form action="logar.html" method="" name="cadatro">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Ex: nome@gmail.com" required>
+        <label for="data">Data de Nascimento</label>
+        <input type="date" id="data" name="data" required>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="João Pedro Santos Silva" required>
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" placeholder="Senha123@" required>
+        <button type="submit">Logar</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div id="pontos-display">
+        <div class="points-section">
+            <h3>@ 2025 IagoFlix. Todos os direitos reservados</h3>
+        </div>
+        <div class="points-section">
+            <h3><a href="logar.jsp">Entrar</a></h3>
+            <h3 class="cadastra-style"><a href="">Cadastrar</a></h3>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

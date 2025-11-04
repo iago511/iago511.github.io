@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IagoFlix - Detalhes do Filme</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        /* ======================================== */
+/* --- ESTILOS DA PÁGINA DE DESCRIÇÃO --- */
+/* (Versão Simplificada) */
+/* ======================================== */
+
+/* Container principal da página de descrição */
+.descricao-container {
+    /* Adiciona espaço para o header fixo */
+    margin-top: 80px; 
+    padding-bottom: 50px; /* Espaço antes do footer */
+    
+    /* Layout de duas colunas */
+    display: flex;
+    gap: 40px; /* Espaço entre o poster e as informações */
+}
+
+/* Coluna da Imagem (Poster) */
+.poster-container {
+    width: 350px; /* Largura fixa */
+    /* Impede que o poster seja "espremido" */
+    flex-shrink: 0; 
+}
+
+#filme-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Borda arredondada como nos cards */
+    border: 2px solid var(--border-color); /* Usa sua cor de borda */
+}
+
+/* Coluna das Informações */
+.info-container {
+    /* Ocupa todo o espaço restante */
+    width: 100%; 
+}
+
+/* --- Estilização dos textos --- */
+
+#filme-titulo {
+    font-size: 2.5rem; /* ~40px */
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+#filme-nota {
+    font-size: 1.2rem; /* ~19px */
+    color: #b3b3b3; 
+    margin-bottom: 30px;
+    font-weight: 600;
+    /* O JS deve escrever "Nota: 8.6" */
+}
+
+.info-container h2 {
+    font-size: 1.5rem; /* ~24px */
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color); 
+    padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#filme-descricao {
+    font-size: 1rem; /* ~16px */
+    line-height: 1.6;
+    color: #d4d4d4; 
+}
+
+/* --- Container do trailer (Simplificado) --- */
+.trailer-container {
+    margin-top: 20px;
+    width: 100%;
+    /* Define um limite para o vídeo não ficar gigante */
+    max-width: 720px; 
+}
+
+.trailer-container iframe {
+    width: 100%;
+    /* Altura baseada na proporção 16:9 (720 / 16 * 9 = 405) */
+    height: 405px; 
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+}
+
+/* --- Ajustes para telas menores (Mobile) --- */
+
+@media (max-width: 900px) {
+    /* Esta regra deve estar no seu style.css global */
+    main {
+        /* Reduz o padding lateral do 'main' em telas menores */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .descricao-container {
+        /* Coloca o poster em cima e o texto embaixo */
+        flex-direction: column; 
+        margin-top: 80px;
+        gap: 30px;
+        align-items: center; /* Centraliza o conteúdo */
+    }
+    
+    .poster-container {
+        width: 100%; /* Ocupa 100% da largura */
+        max-width: 350px; /* Limite máximo */
+    }
+
+    #filme-titulo {
+        font-size: 2.2rem; /* Reduz o título */
+        text-align: center; /* Centraliza no mobile */
+    }
+
+    #filme-nota {
+        text-align: center; /* Centraliza a nota */
+    }
+
+    .trailer-container iframe {
+        /* Ajusta altura no mobile */
+        height: 250px; 
+    }
+}
+    </style>
+    
+    <header>
+        <div class="pontos-display">
+            <div class="points-section">
+                <img id="logo" src="imgs/9399710436_1403cb90-ebcb-4793-81ce-f5ac611a2b6c.png" alt="logo">
+            </div>
+            <div class="points-section">
+                <h3><a href="logado.jsp">Inicio</a></h3>
+            </div>
+            <div class="points-section">
+                <h3> <a href="">Adicionar Filme</a></h3>
+                <h3 id="cadastra-style"><a href="index.html">Sair</a></h3>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="descricao-container">
+            
+            <!-- Coluna das Informações -->
+            <div class="info-container">
+                <!-- O Título será preenchido pelo JavaScript -->
+                <h1 id="filme-titulo"></h1>
+                
+                <!-- A Nota será preenchida pelo JavaScript -->
+                <p id="filme-nota"></p>
+                
+                <!-- Seção da Sinopse -->
+                <h2>Sinopse</h2>
+                <!-- A Descrição será preenchida pelo JavaScript -->
+                <p id="filme-descricao"></p>
+                
+                <!-- Seção do Trailer -->
+                <h2>Trailer</h2>
+                <div class="trailer-container">
+                    <!-- O Trailer (src) será preenchido pelo JavaScript -->
+                    <iframe id="filme-trailer" 
+                        width="560" 
+                        height="315" 
+                        src="" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <div id="pontos-display">
+            <div class="points-section">
+                <h3>@ 2025 IagoFlix. Todos os direitos reservados</h3>
+            </div>
+            <div class="points-section">
+                <h3 class="cadastra-style"><a style="text-decoration: none; color: white;" href="sobreMim.html">Saiba Mais</a></h3>
+            </div>
+        </div>
+    </footer>
+    <script src="Banco.js"></script>
+    <script src="descricao.js"></script>
+</body>
+</html>

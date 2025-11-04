@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Filme - CineReview</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="pontos-display">
+        <div class="points-section">
+            <img id="logo" src="imgs/9399710436_1403cb90-ebcb-4793-81ce-f5ac611a2b6c.png" alt="logo">
+        </div>
+        <div class="points-section">
+            <h3><a href="logado.html">Inicio</a></h3>
+        </div>
+        <div class="points-section">
+            <h3> <a href="">Adicionar Filme</a></h3>
+            <h3 id="cadastra-style"><a href="index.html">Sair</a></h3>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="card">
+      <h1>Adicionar Novo Filme</h1>
+      <form action="logado.html">
+        <label for="title">Título</label>
+        <input type="text" id="title" name="title" placeholder="Digite o título do filme" required>
+
+        <label for="year">Ano</label>
+        <input type="number" id="year" name="year" placeholder="Ex: 2024" min="1900" max="2025" required>
+
+        <label for="genre">Gênero</label>
+        <input type="text" id="genre" name="genre" placeholder="Ex: Ação, Drama, Comédia" required>
+
+        <label for="director">Diretor</label>
+        <input type="text" id="director" name="director" placeholder="Digite o nome do diretor" required>
+
+        <label for="duration">Duração (minutos)</label>
+        <input type="number" id="duration" name="duration" placeholder="Ex: 120" min="1" required>
+
+        <label for="description">Descrição</label>
+        <textarea id="description" name="description" rows="4" placeholder="Digite a descrição do filme" required></textarea>
+
+        <label for="poster">URL do Poster (opcional)</label>
+        <input type="url" id="poster" name="poster" placeholder="https://example.com/poster.jpg">
+
+        <button type="submit">Adicionar Filme</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div id="pontos-display">
+      <div class="points-section">
+          <h3>@ 2025 IagoFlix. Todos os direitos reservados</h3>
+      </div>
+      <div class="points-section">
+          <h3 class="cadastra-style"><a style="text-decoration: none; color: white;" href="sobreMim.html">Saiba Mais</a></h3>
+      </div>
+  </div>
+</footer>
+</body>
+</html>
