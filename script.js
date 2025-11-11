@@ -38,70 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const langStatsContainer = document.getElementById('lang-stats-container');
     const chatDisplay = document.getElementById('chat-display');
     const chatForm = document.getElementById('chat-form');
-    const chatInput = document.getElementById('chat-input');
+    const chatInput = document.getElementById('chat-input');   
 
-    // Funcao para buscar a previsao do tempo
-    async function fetchWeather() {
-        // ...
-        // Checa se a chave da API foi colocada
-        if (CONFIG.weather.apiKey === 'SUA_CHAVE_API_AQUI') {
-            weatherContent.innerHTML = '<p>Configure sua API Key.</p>';
-            return;
-        }
-        // Monta o link da API de clima
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${CONFIG.weather.city}&appid=${CONFIG.weather.apiKey}&units=metric&lang=pt_br`;
-        
-        // Tenta buscar o clima
-        try {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error(`Erro na rede: ${response.statusText}`);
-            const data = await response.json();
-            
-            // Coloca o HTML do clima na pagina
-            weatherContent.innerHTML = `
-                <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].description}">
-                <div>
-                    <strong>${data.main.temp.toFixed(1)}°C</strong> (${data.weather[0].description})
-                    <br>
-                    <span>Em ${data.name}</span>
-                </div>
-            `;
-        } catch (error) {
-            // Se der erro, avisa no console e na pagina
-            console.error('Erro ao buscar clima:', error);
-            weatherContent.innerHTML = '<p>Nao foi possivel carregar o clima.</p>';
-        }
-    }
-
-    // Funcao para buscar uma citacao
-    async function fetchQuote() {
-        // ...
-        try {
-            // Usa um "proxy" (o allorigins) para a API nao bloquear
-            const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(CONFIG.quote.apiUrl)}`);
-            if (!response.ok) throw new Error('Erro na rede (proxy)');
-            const proxyData = await response.json();
-            const data = JSON.parse(proxyData.contents); 
-            const quote = data[0].q;
-            const author = data[0].a;
-            
-            // Coloca a citacao e o autor na pagina
-            quoteContent.innerHTML = `
-                <p>"${quote}"</p>
-                <footer>— ${author}</footer>
-            `;
-        } catch (error) {
-            // Se der erro, avisa
-            console.error("Erro ao buscar citacao:", error);
-            quoteContent.innerHTML = '<p>Nao foi possivel carregar a citacao.</p>';
-        }
-    }
-
-    // (O codigo tem duas funcoes com o mesmo nome 'fetchGitHubData'. 
-    // O navegador vai usar so a segunda, esta aqui de baixo)
-    async function fetchGitHubData() {
-        // ...
-    }
 
 
     // Funcao para buscar os dados do GitHub

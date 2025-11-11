@@ -8,43 +8,29 @@
 </head>
 <body>
     <style>
-        /* ======================================== */
-/* --- ESTILOS DA PÁGINA DE DESCRIÇÃO --- */
-/* (Versão Simplificada) */
-/* ======================================== */
 
-/* Container principal da página de descrição */
 .descricao-container {
-    /* Adiciona espaço para o header fixo */
     margin-top: 80px; 
-    padding-bottom: 50px; /* Espaço antes do footer */
-    
-    /* Layout de duas colunas */
+    padding-bottom: 50px;
     display: flex;
-    gap: 40px; /* Espaço entre o poster e as informações */
+    gap: 40px;
 }
 
-/* Coluna da Imagem (Poster) */
 .poster-container {
     width: 350px; /* Largura fixa */
-    /* Impede que o poster seja "espremido" */
     flex-shrink: 0; 
 }
 
 #filme-poster {
     width: 100%;
     height: auto;
-    border-radius: 8px; /* Borda arredondada como nos cards */
-    border: 2px solid var(--border-color); /* Usa sua cor de borda */
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
 }
 
-/* Coluna das Informações */
 .info-container {
-    /* Ocupa todo o espaço restante */
     width: 100%; 
 }
-
-/* --- Estilização dos textos --- */
 
 #filme-titulo {
     font-size: 2.5rem; /* ~40px */
@@ -76,18 +62,14 @@
     line-height: 1.6;
     color: #d4d4d4; 
 }
-
-/* --- Container do trailer (Simplificado) --- */
 .trailer-container {
     margin-top: 20px;
     width: 100%;
-    /* Define um limite para o vídeo não ficar gigante */
     max-width: 720px; 
 }
 
 .trailer-container iframe {
     width: 100%;
-    /* Altura baseada na proporção 16:9 (720 / 16 * 9 = 405) */
     height: 405px; 
     border-radius: 8px;
     border: 2px solid var(--border-color);
@@ -96,15 +78,13 @@
 /* --- Ajustes para telas menores (Mobile) --- */
 
 @media (max-width: 900px) {
-    /* Esta regra deve estar no seu style.css global */
+
     main {
-        /* Reduz o padding lateral do 'main' em telas menores */
         padding-left: 20px;
         padding-right: 20px;
     }
 
     .descricao-container {
-        /* Coloca o poster em cima e o texto embaixo */
         flex-direction: column; 
         margin-top: 80px;
         gap: 30px;
@@ -150,24 +130,13 @@
 
     <main>
         <section class="descricao-container">
-            
-            <!-- Coluna das Informações -->
             <div class="info-container">
-                <!-- O Título será preenchido pelo JavaScript -->
                 <h1 id="filme-titulo"></h1>
-                
-                <!-- A Nota será preenchida pelo JavaScript -->
                 <p id="filme-nota"></p>
-                
-                <!-- Seção da Sinopse -->
                 <h2>Sinopse</h2>
-                <!-- A Descrição será preenchida pelo JavaScript -->
                 <p id="filme-descricao"></p>
-                
-                <!-- Seção do Trailer -->
                 <h2>Trailer</h2>
                 <div class="trailer-container">
-                    <!-- O Trailer (src) será preenchido pelo JavaScript -->
                     <iframe id="filme-trailer" 
                         width="560" 
                         height="315" 
